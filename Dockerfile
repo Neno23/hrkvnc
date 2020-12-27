@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN set -ex; \
     apt-get update \
     && apt-get install -y --no-install-recommends \
+    && apt-get -qq install -y p7zip-full p7zip-rar curl pv jq ffmpeg locales python3-lxml  \
         ubuntu-desktop \
         unity-lens-applications \
         gnome-panel \
@@ -38,15 +39,6 @@ RUN set -ex; \
         terminator \
         htop \
 	apt-utils \
-	p7zip-full \
-	p7zip-rar \
-	aria2 \
-	curl \
-	pv \
-	jq \ 
-	ffmpeg \
-	locales \
-	python3-lxml \
     dbus-x11 \
     dunst \
     hunspell-en-us \
