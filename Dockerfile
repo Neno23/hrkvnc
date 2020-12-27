@@ -87,6 +87,7 @@ RUN wget https://updates.tdesktop.com/tlinux/tsetup.2.4.7.tar.xz -O /tmp/telegra
     && tar xvfJ /tmp/telegram.tar.xz \
     && mv /tmp/Telegram/Telegram /usr/bin/Telegram \
     && rm -rf /tmp/{telegram.tar.xz,Telegram}
+COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . /app
