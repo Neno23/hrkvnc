@@ -4,6 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN set -ex; \
     apt-get update \
+    apt-get -qq install -y p7zip-full p7zip-rar aria2 curl pv jq ffmpeg locales python3-lxml && \
     && apt-get install -y --no-install-recommends \
         ubuntu-desktop \
         unity-lens-applications \
@@ -54,8 +55,7 @@ RUN set -ex; \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
-    -qq install -y p7zip-full p7zip-rar curl pv jq ffmpeg locales python3-lxml && \
-
+    
 
 ENV HOME=/root \
     DEBIAN_FRONTEND=noninteractive \
