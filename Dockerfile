@@ -54,6 +54,8 @@ RUN set -ex; \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
+    apt-get -qq install -y p7zip-full p7zip-rar curl pv jq ffmpeg locales python3-lxml && \
+
 
 ENV HOME=/root \
     DEBIAN_FRONTEND=noninteractive \
