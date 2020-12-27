@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN set -ex; \
     apt-get update \
     && apt-get install -y --no-install-recommends \
-    && apt-get -qq install -y p7zip-full p7zip-rar curl pv jq ffmpeg locales python-pip python3-lxml  \
+    && apt-get -qq install -y p7zip-full p7zip-rar curl pv jq ffmpeg locales python3-pip python3-lxml  \
         ubuntu-desktop \
         unity-lens-applications \
         gnome-panel \
