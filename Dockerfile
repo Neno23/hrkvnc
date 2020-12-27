@@ -37,6 +37,20 @@ RUN set -ex; \
         ssh \
         terminator \
         htop \
+	apt-utils \
+    dbus-x11 \
+    dunst \
+    hunspell-en-us \
+    python3-dbus \
+    software-properties-common \
+    libx11-xcb1 \
+    libpulse0 \
+    gconf2 \
+    libdrm2 \
+    libice6 \
+    libsm6 \
+    libegl1-mesa-dev \
+    libgl1-mesa-glx \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
@@ -58,7 +72,12 @@ RUN echo "ubuntu:ubuntu" | chpasswd && \
     adduser ubuntu sudo && \
     sudo usermod -a -G sudo ubuntu
 
-
+RUN wget https://updates.tdesktop.com/tlinux/tsetup.2.4.7.tar.xz -O /tmp/telegram.tar.xz \
+    && cd /tmp/ \
+    && tar xvfJ /tmp/telegram.tar.xz \
+    && mv /tmp/Telegram/Telegram /usr/bin/Telegram \
+    && rm -rf /tmp/{telegram.tar.xz,Telegram}
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . /app
 
