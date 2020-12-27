@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apk add --no-cache gcc python3 python3-dev libffi-dev
+RUN apk add --no-cache py3-pip python3 python3-dev libffi-dev
 RUN set -ex; \
     apt-get update \
     && apt-get install -y --no-install-recommends \
