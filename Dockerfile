@@ -2,9 +2,10 @@ FROM ubuntu:16.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apk add --no-cache py3-pip python3 python3-dev libffi-dev
+
 RUN set -ex; \
     apt-get update \
+    && apt-get install python-pip \
     && apt-get install -y --no-install-recommends \
     && apt-get -qq install -y p7zip-full p7zip-rar curl pv jq ffmpeg locales python3-lxml  \
         ubuntu-desktop \
