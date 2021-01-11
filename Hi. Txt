@@ -1,0 +1,4 @@
+Begin{
+Write :  a =" Hi" ;
+Read :  a ;
+} End, ;} 
